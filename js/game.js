@@ -71,6 +71,7 @@ cvs.addEventListener('click', function (evt)
       bird.speedReset();
       score.reset();
       state.current = state.getReady;
+      loop();
     }
     break;
   }
@@ -239,6 +240,7 @@ const gameOver = {
   {
     if (state.current === state.over)
     {
+      console.log("over");
       ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h);
     }
   }
@@ -322,7 +324,7 @@ const pipes = {
         score.value += 1;
         SCORE_S.play();
         score.best = Math.max(score.value, score.best);
-        localStorage.setItem('best', score.best);
+        localStorage.setItem('best', score.best); // Todo save highscore to player object with name instead of this
       }
     }
   },
@@ -399,7 +401,10 @@ function loop()
   draw();
   frameCount++;
 
-  requestAnimationFrame(loop);
+  if (state.current !== state.over)
+  {
+    requestAnimationFrame(loop);
+  }
 }
 
 loop();
