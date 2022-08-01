@@ -3,11 +3,7 @@ const cvs = document.getElementById('bird');
 const ctx = cvs.getContext('2d');
 
 // GAME VARS AND CONSTS
-<<<<<<< HEAD
-let frames = 0;
-=======
 let frameCount = 0; // renamed from frames because of eslint error
->>>>>>> b836327d34f147e5ba83fc0a9f85c9e4030a8151
 const DEGREE = Math.PI / 180;
 
 // LOAD SPRITE IMAGE
