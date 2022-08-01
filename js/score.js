@@ -7,28 +7,29 @@ function randomScore(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-let userName = [];
-let userScore = []; 
+// let userName = [];
+// let userScore = []; 
 
-function Score(userName, userScore) {
-  this.userName = userName; 
-  this.userScore = userScore;
+// function Score(userName, userScore) {
+//   this.userName = userName; 
+//   this.userScore = userScore;
   
-  bestScore.push(this);
-}
+//   bestScore.push(this);
+// }
 
-Score.prototype.get = function () {
-  for (let i = 0; i < 10; i++) {
-    if (userScore >= bestScore);
-    let bestScore = userScore; 
-    this.bestScore.push();
-  }
-    else {
-      (userScore < bestScore);
-    let bestScore = !userScore; 
-    bestScore.push(this)(randomScore);;
-  }
-}
+// Score.prototype.get = function () {
+//   for (let i = 0; i < 10; i++) {
+//     if (userScore >= bestScore);
+//     let bestScore = userScore; 
+//     this.bestScore.push();
+//   }
+//     else {
+//       (userScore < bestScore);
+//     let bestScore = !userScore; 
+//     bestScore.push(this)(randomScore);;
+//   }
+// }
+
 
 Score.prototype.render = function () {
 
