@@ -36,10 +36,10 @@ const state = {
 
 // START BUTTON COORD
 const startBtn = {
-  x: 120,
-  y: 263,
-  w: 83,
-  h: 29
+  x: 200,
+  y: 450,
+  w: 200,
+  h: 100
 };
 
 // CONTROL THE GAME
@@ -80,12 +80,12 @@ cvs.addEventListener('click', function (evt)
 
 // BACKGROUND
 const bg = {
-  sX: 0,
-  sY: 0,
-  w: 275,
-  h: 226,
+  sX: 1400,
+  sY: 15,
+  w: 1400,
+  h: 1000,
   x: 0,
-  y: cvs.height - 226,
+  y: 0,
 
   draw: function ()
   {
@@ -98,12 +98,12 @@ const bg = {
 
 // FOREGROUND
 const fg = {
-  sX: 276,
-  sY: 0,
-  w: 224,
-  h: 112,
+  sX: 590,
+  sY: 3,
+  w: 450,
+  h: 227,
   x: 0,
-  y: cvs.height - 112,
+  y: cvs.height - 225,
 
   dx: 2,
 
@@ -126,17 +126,16 @@ const fg = {
 // BIRD
 const bird = {
   animation: [
-    {sX: 276, sY: 112},
-    {sX: 276, sY: 139},
-    {sX: 276, sY: 164},
-    {sX: 276, sY: 139}
+    {sX: 565, sY: 241},
+    {sX: 562, sY: 315},
+    {sX: 562, sY: 388}
   ],
-  x: 50,
+  x: 70,
   y: 150,
-  w: 34,
-  h: 26,
+  w: 120,
+  h: 74,
 
-  radius: 12,
+  radius: 10,
 
   frame: 0,
 
@@ -193,7 +192,7 @@ const bird = {
       // IF THE SPEED IS GREATER THAN THE JUMP MEANS THE BIRD IS FALLING DOWN
       if (this.speed >= this.jump)
       {
-        this.rotation = 90 * DEGREE;
+        this.rotation = 45 * DEGREE;
         this.frame = 1;
       } else
       {
@@ -211,10 +210,10 @@ const bird = {
 // GET READY MESSAGE
 const getReady = {
   sX: 0,
-  sY: 228,
-  w: 173,
-  h: 152,
-  x: cvs.width / 2 - 173 / 2,
+  sY: 485,
+  w: 373,
+  h: 339,
+  x: cvs.width / 2 - 360 / 2,
   y: 80,
 
   draw: function ()
@@ -229,11 +228,11 @@ const getReady = {
 
 // GAME OVER MESSAGE
 const gameOver = {
-  sX: 175,
-  sY: 228,
-  w: 225,
-  h: 202,
-  x: cvs.width / 2 - 225 / 2,
+  sX: 370,
+  sY: 483,
+  w: 484,
+  h: 433,
+  x: cvs.width / 2 - 480 / 2,
   y: 90,
 
   draw: function ()
@@ -251,18 +250,18 @@ const pipes = {
   position: [],
 
   top: {
-    sX: 553,
+    sX: 1183,
     sY: 0
   },
   bottom: {
-    sX: 502,
+    sX: 1080,
     sY: 0
   },
 
-  w: 53,
-  h: 400,
-  gap: 150,
-  maxYPos: -150,
+  w: 92,
+  h: 854,
+  gap: 280,
+  maxYPos: -460,
   dx: 2,
 
   draw: function ()
@@ -348,19 +347,19 @@ const score = {
     if (state.current === state.game)
     {
       ctx.lineWidth = 2;
-      ctx.font = '35px Teko';
+      ctx.font = '70px Teko';
       ctx.fillText(this.value, cvs.width / 2, 50);
       ctx.strokeText(this.value, cvs.width / 2, 50);
 
     } else if (state.current === state.over)
     {
       // SCORE VALUE
-      ctx.font = '25px Teko';
-      ctx.fillText(this.value, 225, 186);
-      ctx.strokeText(this.value, 225, 186);
+      ctx.font = '70px Teko,';
+      ctx.fillText(this.value, 450, 310);
+      ctx.strokeText(this.value, 450, 310);
       // BEST SCORE
-      ctx.fillText(this.best, 225, 228);
-      ctx.strokeText(this.best, 225, 228);
+      ctx.fillText(this.best, 450, 400);
+      ctx.strokeText(this.best, 450, 400);
     }
   },
 
