@@ -6,7 +6,7 @@ function toggleModal() {
   modal.classList.toggle('show-modal');
 }
 
-function windowOnHover(event) {
+function windowOnClick(event) {
   if (event.target === modal) {
     toggleModal();
   }
