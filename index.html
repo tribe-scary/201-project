@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,22 +11,15 @@
     <title>Document</title>
 </head>
 <body>
-  <header>
+<header>
     <nav class="navbar">
-      <a href="./index.html" class="logo">
-        <img src="./img/git-push-logo.png" alt="git push logo"></a>
-      <ul class="nav-links">
-        <li class="nav-item"><a href="./index.html">Home</a> </li>
-        <li class="nav-item"><a href="./scores.html">High Score</a></li>
-        <li class="nav-item"><a href="./about.html">About Us</a></li>
-
-      </ul>
-   <!-- Start Audio Off/On Checkbox -->
-
-   
-   
-   
-   <!-- End Audio Off/On Toggle -->
+        <a href="./index.html" class="logo">
+            <img src="./img/git-push-logo.png" alt="git push logo"></a>
+        <ul class="nav-links">
+            <li class="nav-item"><a href="./index.html">Home</a></li>
+            <li class="nav-item"><a href="./scores.html">High Score</a></li>
+            <li class="nav-item"><a href="./about.html">About Us</a></li>
+        </ul>
   </nav>
 </header>
 <main>
@@ -40,18 +33,21 @@
         <h1>Use the sound toggle button to enable game sounds, uncheck to disable game sounds</h1>
       </div>
     </div>
-    <label class="switch">Sound Toggle:
+    <label class="switch"> Sound Toggle:
       <input id="toggle-sound" type="checkbox" checked>
       <span class="slider round"></span>
     </label>
       </div>   
       <canvas id="bird" width="640" height="760"></canvas>
     </div>
-  </main>
-  <footer><a href="https://github.com/tribe-scary">© Tribe Scary <i class="fa fa-github" aria-hidden="true"></i></a>
-  </footer>
+    <div id="main-game-area">
+        <canvas id="bird" width="640" height="760"></canvas>
+    </div>
+</main>
+<footer><a href="https://github.com/tribe-scary">© Tribe Scary <i class="fa fa-github" aria-hidden="true"></i></a>
+</footer>
 </body>
-  <script src="./js/modal.js"></script>
-  <script src="./js/game.js"></script>
-  <script src="./js/app.js"></script>
+<script src="./js/modal.js"></script>
+<script src="./js/game.js"></script>
+<script src="./js/app.js"></script>
 </html>
