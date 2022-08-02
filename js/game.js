@@ -77,19 +77,6 @@ cvs.addEventListener('click', function (evt)
   }
 });
 
-    // CHECK IF WE CLICK ON THE START BUTTON
-    if (
-      clickX >= startBtn.x &&
-        clickX <= startBtn.x + startBtn.w &&
-        clickY >= startBtn.y &&
-        clickY <= startBtn.y + startBtn.h
-    ) {
-      pipes.reset();
-      bird.speedReset();
-      score.reset();
-      state.current = state.getReady;
-    }
-    break;
 
 // BACKGROUND
 const bg = {
