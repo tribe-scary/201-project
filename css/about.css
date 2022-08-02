@@ -1,0 +1,40 @@
+body {
+    background-color: #413e3e;
+}
+
+.bio {
+    margin-top: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2vw;
+}
+
+div p {
+    border: solid;
+    margin: 2vw;
+    background-color: #6d98b4;
+    padding: 1vw;
+    height: auto;
+    width: 80%;
+}
+
+div img {
+    border: solid;
+    height: 170px;
+    border-radius: 100px;
+}
+
+.contactInfo p {
+    text-align: center;
+    margin-left: 1vw;
+}
+
+section a:hover {
+    color: #943232;
+}
+
+a {
+    text-decoration: none;
+    color: yellow;
+}
