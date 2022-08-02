@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -9,6 +11,10 @@ html {
 }
 
 nav {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
   width: 100%;
   background-color: #943232;
   padding-left: 2rem;
@@ -27,6 +33,7 @@ nav {
 .nav-item a {
   display: inline-block;
   font-family: 'teko';
+  font-weight: 700;
   font-size: 2rem;
   padding: 15px 15px;
   text-decoration: none;
@@ -46,4 +53,29 @@ nav {
 .logo img {
   width: 175px;
   vertical-align: middle;
+}
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #943232;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  font-family: 'teko';
+  font-size: 1.25rem;
+  padding: 2px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  width: auto;
+  justify-content: center;
 }
