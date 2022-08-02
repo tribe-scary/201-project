@@ -90,8 +90,6 @@ cvs.addEventListener('click', function (evt)
       state.current = state.getReady;
     }
     break;
-  }
-});
 
 // BACKGROUND
 const bg = {
