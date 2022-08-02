@@ -341,11 +341,7 @@ const pipes = {
   {
     if (state.current !== state.game) return;
 
-<<<<<<< HEAD
-    if (frameCount % 180 === 0)
-=======
     if (frameCount % xGap === 0)
->>>>>>> e8ffe1d201cdf08c6d94465f094f70cbf7b2d4de
     {
       this.position.push({
         x: cvs.width,

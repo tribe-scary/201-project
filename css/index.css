@@ -5,9 +5,9 @@ h1 {
   font-weight: 300;
   font-size: 1.5rem;
   color: #fff;
-  text-align: center;
-  
+  text-align: center;  
 }
+
 
 .gameInstructions {
   display: flex;
@@ -17,6 +17,7 @@ h1 {
   align-items: center;
   align-content: center;
   margin: .5rem .5rem;
+
 }
 
 .trigger {
@@ -92,6 +93,7 @@ h1 {
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
+
 canvas {
   margin-bottom: 2rem;
 }
@@ -126,4 +128,16 @@ canvas {
 
 .switch:hover {
   cursor: pointer;
+}
+
+main {
+  background-color: darkgray;
+
+  /* background-image: url("https://media1.giphy.com/media/9LZTcawH3mc8V2oUqk/giphy.gif?cid=ecf05e4762va9jyrawk8ryettp9671zlxhdeqh2xci0tspaw&rid=giphy.gif&ct=g");
+background-size: contain;
+background-repeat:inherit;
+background-position;
+height: 100%;
+width: 100%;
+display: flex; */
 }
