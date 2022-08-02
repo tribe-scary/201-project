@@ -40,7 +40,9 @@ Player.render = function () {
 
     let rankCell = document.createElement('td');
 
+
     rankCell.textContent = i + 1;
+
 
     newUser.appendChild(rankCell);
 
@@ -54,7 +56,8 @@ Player.render = function () {
   }
 };
 
-function makeHeader() {
+function makeHeader()
+{
   let row1 = document.createElement('tr');
   mainTableElem.appendChild(row1);
 

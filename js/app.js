@@ -10,20 +10,23 @@ function Player(name, score)
   Player.players.push(this);
 }
 
-Player.saveToLocalStorage = function ()
+Player.saveToLocalStorage = function (Player)
 {
-  let data = JSON.stringify(Player.players);
-  localStorage.setItem('players', data);
+  let savedData = JSON.parse(localStorage.getItem('players'));
+  savedData.push(Player);
+
+  localStorage.setItem('players', JSON.stringify(savedData));
 };
 
 Player.readFromLocalStorage = function ()
 {
   let data = JSON.parse(localStorage.getItem('players'));
+  console.log(data);
   if (!data)
   {
     return;
   }
-  console.log(data);
+
   for (let i = 0; i < data.length; i++)
   {
     let playerName = data[i].name;
@@ -40,13 +43,9 @@ function compareScore(firstPlayer, secondPlayer)
   if (firstPlayer.score < secondPlayer.score)
   {
     return -1;
-  }
-  else if (firstPlayer.score > secondPlayer.score)
+  } else if (firstPlayer.score > secondPlayer.score)
   {
     return 1;
   }
   return 0;
 }
-
-
-Player.readFromLocalStorage(); // this runs everytime the website starts
