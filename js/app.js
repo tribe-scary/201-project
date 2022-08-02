@@ -1,5 +1,4 @@
 'use strict';
-console.log("hello");
 
 Player.players = [];
 
