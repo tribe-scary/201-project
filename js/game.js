@@ -14,22 +14,28 @@ sprite.src = 'img/sprite.png';
 
 // Toggle Sound Start
 
-let toggleSound = document.getElementById("toggle-sound");
+let toggleSound = document.getElementById('toggle-sound');
 
-toggleSound.addEventListener("change", handleClick);
+toggleSound.addEventListener('change', handleClick);
 
 let clickStatus = true;
 
-function handleClick(event){
+let xGap = 200;
+let yGap = 280;
+
+function handleClick(event)
+{
   clickStatus = !clickStatus;
 
-  if (clickStatus === true){
+  if (clickStatus === true)
+  {
     SCORE_S.src = 'audio/sfx_point.wav';
     FLAP.src = 'audio/sfx_flap.wav';
     HIT.src = 'audio/sfx_hit.wav';
     SWOOSHING.src = 'audio/sfx_swooshing.wav';
     DIE.src = 'audio/sfx_die.wav';
-  } else {
+  } else
+  {
     SCORE_S.src = 'audio/silent_quarter-second.wav';
     FLAP.src = 'audio/silent_quarter-second.wav';
     HIT.src = 'audio/silent_quarter-second.wav';
@@ -37,8 +43,6 @@ function handleClick(event){
     DIE.src = 'audio/silent_quarter-second.wav';
   }
 }
-
-
 
 
 // Toggle Sound End
@@ -77,8 +81,13 @@ const startBtn = {
 };
 
 // CONTROL THE GAME
-cvs.addEventListener('click', function (evt)
+function jumpHandler(event)
 {
+
+  if (event.key !== ' ' && event.keyCode !== undefined)
+  {
+    return;
+  }
   let rect;
   let clickX;
   let clickY;
@@ -95,21 +104,34 @@ cvs.addEventListener('click', function (evt)
     break;
   case state.over:
     rect = cvs.getBoundingClientRect();
-    clickX = evt.clientX - rect.left;
-    clickY = evt.clientY - rect.top;
+    clickX = event.clientX - rect.left;
+    clickY = event.clientY - rect.top;
 
     // CHECK IF WE CLICK ON THE START BUTTON
-    if (clickX >= startBtn.x && clickX <= startBtn.x + startBtn.w && clickY >= startBtn.y && clickY <= startBtn.y + startBtn.h) //todo remove name element if you click this
+    if (clickX >= startBtn.x && clickX <= startBtn.x + startBtn.w && clickY >= startBtn.y && clickY <= startBtn.y + startBtn.h)
     {
-      pipes.reset();
-      bird.speedReset();
-      score.reset();
-      state.current = state.getReady;
-      loop();
+      let nameInput = document.getElementById('name-input');
+      if (nameInput)
+      {
+        gameAreaElement.removeChild(nameInput);
+      }
+      reset();
     }
     break;
   }
-});
+}
+
+function reset()
+{
+  pipes.reset();
+  bird.speedReset();
+  score.reset();
+  state.current = state.getReady;
+  loop();
+}
+
+cvs.addEventListener('click', jumpHandler);
+document.body.onkeyup = jumpHandler;
 
 
 // BACKGROUND
@@ -294,7 +316,7 @@ const pipes = {
 
   w: 92,
   h: 854,
-  gap: 280,
+  gap: yGap,
   maxYPos: -460,
   dx: 2,
 
@@ -319,7 +341,11 @@ const pipes = {
   {
     if (state.current !== state.game) return;
 
+<<<<<<< HEAD
     if (frameCount % 180 === 0)
+=======
+    if (frameCount % xGap === 0)
+>>>>>>> e8ffe1d201cdf08c6d94465f094f70cbf7b2d4de
     {
       this.position.push({
         x: cvs.width,
@@ -356,7 +382,6 @@ const pipes = {
         score.value += 1;
         SCORE_S.play();
         score.best = Math.max(score.value, score.best);
-        localStorage.setItem('best', score.best); // Todo save highscore to player object with name instead of this
       }
     }
   },
@@ -442,16 +467,19 @@ function loop()
     gameAreaElement.appendChild(nameInput);
     nameInput.type = 'text';
     nameInput.placeholder = 'Name';
+    nameInput.id = 'name-input';
+    nameInput.maxLength = 3;
 
     nameInput.addEventListener('keypress', function handleSubmit(event)
     {
       if (event.key === 'Enter')
       {
-        Player.saveToLocalStorage(new Player(nameInput.value, score.value));
+        Player.saveToLocalStorage(new Player(nameInput.value.toUpperCase(), score.value));
         gameAreaElement.removeChild(nameInput);// safely deletes nameInput
         nameInput.replaceWith(nameInput.cloneNode());// removes event listener
+        reset();
       }
-    }); //todo remove name when start button is hit or block the start button
+    });
   }
 }
 
