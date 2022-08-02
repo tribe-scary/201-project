@@ -378,7 +378,6 @@ const pipes = {
         score.value += 1;
         SCORE_S.play();
         score.best = Math.max(score.value, score.best);
-        localStorage.setItem('best', score.best); // Todo save highscore to player object with name instead of this
       }
     }
   },
@@ -476,7 +475,7 @@ function loop()
         nameInput.replaceWith(nameInput.cloneNode());// removes event listener
         reset();
       }
-    }); //todo remove name when start button is hit or block the start button
+    });
   }
 }
 

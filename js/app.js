@@ -12,9 +12,15 @@ function Player(name, score)
 
 Player.saveToLocalStorage = function (Player)
 {
-  let savedData = JSON.parse(localStorage.getItem('players'));
-  savedData.push(Player);
 
+  let savedData = JSON.parse(localStorage.getItem('players'));
+  if (savedData)
+  {
+    savedData.push(Player);
+  }
+  else {
+    savedData = [Player];
+  }
   localStorage.setItem('players', JSON.stringify(savedData));
 };
 
