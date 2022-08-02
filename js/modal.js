@@ -14,4 +14,4 @@ function windowOnHover(event) {
 
 trigger.addEventListener('click', toggleModal);
 closeButton.addEventListener('click', toggleModal);
-window.addEventListener('click', windowOnHover);
+window.addEventListener('click', windowOnClick);
