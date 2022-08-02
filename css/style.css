@@ -1,0 +1,25 @@
+td {
+    text-align: center;
+}
+
+canvas{
+    border: 1px solid #000;
+    display: block;
+    margin: 0 auto;
+}
+
+input {
+    height: 50px;
+    width: 200px;
+    font-size: xxx-large;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-inline: auto;
+}
+
+#main-game-area {
+    width: fit-content;
+    display: flex;
+    margin-inline: auto;
+}
