@@ -71,6 +71,7 @@ cvs.addEventListener('click', function (evt)
       bird.speedReset();
       score.reset();
       state.current = state.getReady;
+      loop();
     }
     break;
   }
@@ -414,7 +415,13 @@ function loop()
   draw();
   frameCount++;
 
-  requestAnimationFrame(loop);
+  if (state.current !== state.over)
+  {
+    requestAnimationFrame(loop);
+  } else
+  {
+    //TODO create new player and call save to local storage function
+  }
 }
 
 loop();
