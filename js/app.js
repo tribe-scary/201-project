@@ -1,5 +1,4 @@
 'use strict';
-console.log("hello");
 
 Player.players = [];
 
@@ -28,5 +27,3 @@ Player.readFromLocalStorage = function ()
     new Player(playerName, playerScore);
   }
 };
-
-
