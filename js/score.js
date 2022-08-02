@@ -25,6 +25,7 @@ let mainTableElem = document.getElementById('highscore');
 //     bestScore.push(this)(randomScore);;
 //   }
 // }
+
 Player.readFromLocalStorage();
 
 let data = Player.players;
@@ -38,7 +39,9 @@ Player.render = function () {
     mainTableElem.appendChild(newUser);
 
     let rankCell = document.createElement('td');
+
     rankCell.textContent = i + 1;
+
     newUser.appendChild(rankCell);
 
     let nameCell = document.createElement('td');

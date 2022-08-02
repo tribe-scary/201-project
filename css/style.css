@@ -1,0 +1,18 @@
+td {
+    text-align: center;
+}
+
+canvas{
+    border: 1px solid #000;
+    display: block;
+    margin: 0 auto;
+}
+
+input {
+    height: 50px;
+    width: 200px;
+    font-size: xxx-large;
+    position: absolute;
+    right: 40%;
+    top: 50%;
+}

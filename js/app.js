@@ -19,6 +19,10 @@ Player.saveToLocalStorage = function ()
 Player.readFromLocalStorage = function ()
 {
   let data = JSON.parse(localStorage.getItem('players'));
+  if (!data)
+  {
+    return;
+  }
   console.log(data);
   for (let i = 0; i < data.length; i++)
   {
