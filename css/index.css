@@ -130,14 +130,8 @@ canvas {
   cursor: pointer;
 }
 
-main {
-  background-color: darkgray;
-
-  /* background-image: url("https://media1.giphy.com/media/9LZTcawH3mc8V2oUqk/giphy.gif?cid=ecf05e4762va9jyrawk8ryettp9671zlxhdeqh2xci0tspaw&rid=giphy.gif&ct=g");
-background-size: contain;
-background-repeat:inherit;
-background-position;
-height: 100%;
-width: 100%;
-display: flex; */
+#toggle-sound {
+  display: none;
 }
+
+  
