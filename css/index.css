@@ -9,6 +9,10 @@ h1 {
   
 }
 
+body {
+  background-color: #413e3e;
+}
+
 .gameInstructions {
   display: flex;
   flex-direction: row;
