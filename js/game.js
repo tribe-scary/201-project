@@ -240,7 +240,6 @@ const gameOver = {
   {
     if (state.current === state.over)
     {
-      console.log("over");
       ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h);
     }
   }
@@ -404,6 +403,9 @@ function loop()
   if (state.current !== state.over)
   {
     requestAnimationFrame(loop);
+  } else
+  {
+    //TODO create new player and call save to local storage function
   }
 }
 

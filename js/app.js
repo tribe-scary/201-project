@@ -27,3 +27,4 @@ Player.readFromLocalStorage = function ()
     new Player(playerName, playerScore);
   }
 };
+// todo sort through players array before reading.
