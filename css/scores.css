@@ -30,6 +30,10 @@ h1,
     -webkit-text-fill-color: transparent;
 }
 
+th, tr, td {
+    width: 25%;
+}
+
 .highScoreTable {
     display: flex;
     flex-direction: column;
