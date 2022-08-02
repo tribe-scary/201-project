@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  width: 100%;
+  background-color: #943232;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-item a {
+  display: inline-block;
+  font-family: 'teko';
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 15px 15px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  width: auto;
+}
+
+.nav-item:hover {
+  background-color: white;
+}
+
+.nav-item:hover a {
+  color: #943232;
+}
+
+.logo img {
+  width: 175px;
+  vertical-align: middle;
+}
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #943232;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  font-family: 'teko';
+  font-size: 1.25rem;
+  padding: 2px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  width: auto;
+  justify-content: center;
+}
