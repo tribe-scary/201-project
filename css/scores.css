@@ -1,48 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
 
+body,
 html {
     height: 100%;
 }
 
 main {
-  margin: auto;
-  height: 100%;
-  text-align: center;
-  /* background-image: url(https://media.giphy.com/media/dkuZHIQsslFfy/giphy.gif); */
-  /* overflow: hidden; */
+    margin: auto;
+    text-align: center;
+    height: 100%;
+    display: flex;
+
+}
+
+#backgroundImage {
+    background-image: url("https://media1.giphy.com/media/de7YjnUgKq5Ta/giphy.gif?cid=ecf05e47cmr294oowc2f2yoxssge3c7119h9821cc8dhzaf7&rid=giphy.gif&ct=g");
+    background-size: 100%;
+    background-repeat:inherit;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+h1,
+#highscore {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .highScoreTable {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem;
-  font-family: "Anton", sans-serif;
-  font-size: xx-large;
-  border: #943232 solid 5px;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik Mono One", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 35px;
+    background-color: whitesmoke;
+    width: fit-content;
+    height: fit-content;
+    background-size: contain;
+    border: 5px groove #000000;
+    margin: auto;
+
 
 }
 
-#highscore {
-  background-image: linear-gradient(
-    to right,
-    #943232,
-    #6d98b4,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
-  -webkit-background-clip: text;
-  color: transparent;
-
-  margin-top: 1rem;
-  align-self: center;
-  flex-direction: column;
-  background-color: ;
-  width: 200px;
-  height: 200px;
+footer{
+    margin-top: 0%;
 }
