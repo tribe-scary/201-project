@@ -2,6 +2,8 @@
 const cvs = document.getElementById('bird');
 const ctx = cvs.getContext('2d');
 
+const gameAreaElement = cvs.parentElement;
+
 // GAME VARS AND CONSTS
 let frameCount = 0; // renamed from frames because of eslint error
 const DEGREE = Math.PI / 180;
@@ -65,7 +67,7 @@ cvs.addEventListener('click', function (evt)
     clickY = evt.clientY - rect.top;
 
     // CHECK IF WE CLICK ON THE START BUTTON
-    if (clickX >= startBtn.x && clickX <= startBtn.x + startBtn.w && clickY >= startBtn.y && clickY <= startBtn.y + startBtn.h)
+    if (clickX >= startBtn.x && clickX <= startBtn.x + startBtn.w && clickY >= startBtn.y && clickY <= startBtn.y + startBtn.h) //todo remove name element if you click this
     {
       pipes.reset();
       bird.speedReset();
@@ -404,7 +406,22 @@ function loop()
     requestAnimationFrame(loop);
   } else
   {
-    //TODO create new player and call save to local storage function
+    Player.readFromLocalStorage();
+    let nameInput = document.createElement('input');
+    gameAreaElement.appendChild(nameInput);
+    nameInput.type = 'text';
+    nameInput.placeholder = 'Name';
+
+    nameInput.addEventListener('keypress', function handleSubmit(event)
+    {
+      if (event.key === 'Enter')
+      {
+        new Player(nameInput.value, score.value);
+        Player.saveToLocalStorage();
+        gameAreaElement.removeChild(nameInput);// safely deletes nameInput
+        nameInput.replaceWith(nameInput.cloneNode());// removes event listener
+      }
+    }); //todo remove name when start button is hit or block the start button
   }
 }
 

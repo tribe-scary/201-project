@@ -19,6 +19,10 @@ Player.saveToLocalStorage = function ()
 Player.readFromLocalStorage = function ()
 {
   let data = JSON.parse(localStorage.getItem('players'));
+  if (!data)
+  {
+    return;
+  }
   console.log(data);
   for (let i = 0; i < data.length; i++)
   {
@@ -26,5 +30,23 @@ Player.readFromLocalStorage = function ()
     let playerScore = data[i].score;
     new Player(playerName, playerScore);
   }
+
+  Player.players.sort(compareScore);
+  Player.players.reverse();
 };
-// todo sort through players array before reading.
+
+function compareScore(firstPlayer, secondPlayer)
+{
+  if (firstPlayer.score < secondPlayer.score)
+  {
+    return -1;
+  }
+  else if (firstPlayer.score > secondPlayer.score)
+  {
+    return 1;
+  }
+  return 0;
+}
+
+
+Player.readFromLocalStorage(); // this runs everytime the website starts
