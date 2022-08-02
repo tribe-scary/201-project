@@ -17,8 +17,8 @@ Player.saveToLocalStorage = function (Player)
   if (savedData)
   {
     savedData.push(Player);
-  }
-  else {
+  } else
+  {
     savedData = [Player];
   }
   localStorage.setItem('players', JSON.stringify(savedData));
@@ -27,7 +27,6 @@ Player.saveToLocalStorage = function (Player)
 Player.readFromLocalStorage = function ()
 {
   let data = JSON.parse(localStorage.getItem('players'));
-  console.log(data);
   if (!data)
   {
     return;
@@ -43,8 +42,10 @@ Player.readFromLocalStorage = function ()
   Player.players.sort(compareScore);
   Player.players.reverse();
 
-  Player.players.length = 10;
-
+  if (Player.players.length > 10)
+  {
+    Player.players.length = 10;
+  }
 
 };
 
