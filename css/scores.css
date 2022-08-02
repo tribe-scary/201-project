@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
+
+body,
+html {
+    height: 100%;
+}
+
+main {
+    margin: auto;
+    text-align: center;
+    height: 100%;
+    display: flex;
+
+}
+
+#backgroundImage {
+    background-image: url("https://media1.giphy.com/media/9LZTcawH3mc8V2oUqk/giphy.gif?cid=ecf05e4762va9jyrawk8ryettp9671zlxhdeqh2xci0tspaw&rid=giphy.gif&ct=g");
+    background-size: contain;
+    background-repeat:inherit;
+    background-position;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+h1,
+#highscore {
+    background-image: linear-gradient(to top, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+th, tr, td {
+    width: 25%;
+}
+
+.highScoreTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik Mono One", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 35px;
+    background-color: whitesmoke;
+    width: fit-content;
+    height: fit-content;
+    background-size: cover;
+    border: 5px groove #000000;
+    margin: auto;
+    background-image: url("https://images.unsplash.com/photo-1618565917118-723caea78e02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsYWNrJTIwYWVzdGhldGljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+
+
+}
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #7fced8;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ba1c9d;
+  }
+  
+
+footer{
+    margin-top: 0%;
+}
