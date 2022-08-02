@@ -3,7 +3,6 @@
 
 let mainTableElem = document.getElementById('highscore');
 
-
 // let userName = [];
 // let userScore = [];
 
@@ -31,21 +30,20 @@ Player.readFromLocalStorage();
 
 let data = Player.players;
 
-
-Player.render = function ()
-{
-
+Player.render = function () {
   let row1 = document.createElement('tr');
   mainTableElem.appendChild(row1);
 
-  for (let i = 0; i < data.length; i++)
-  {
-
+  for (let i = 0; i < data.length; i++) {
     let newUser = document.createElement('tr');
     mainTableElem.appendChild(newUser);
 
     let rankCell = document.createElement('td');
+
+
     rankCell.textContent = i + 1;
+
+
     newUser.appendChild(rankCell);
 
     let nameCell = document.createElement('td');

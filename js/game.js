@@ -12,6 +12,38 @@ const DEGREE = Math.PI / 180;
 const sprite = new Image();
 sprite.src = 'img/sprite.png';
 
+// Toggle Sound Start
+
+let toggleSound = document.getElementById("toggle-sound");
+
+toggleSound.addEventListener("change", handleClick);
+
+let clickStatus = true;
+
+function handleClick(event){
+  clickStatus = !clickStatus;
+
+  if (clickStatus === true){
+    SCORE_S.src = 'audio/sfx_point.wav';
+    FLAP.src = 'audio/sfx_flap.wav';
+    HIT.src = 'audio/sfx_hit.wav';
+    SWOOSHING.src = 'audio/sfx_swooshing.wav';
+    DIE.src = 'audio/sfx_die.wav';
+  } else {
+    SCORE_S.src = 'audio/silent_quarter-second.wav';
+    FLAP.src = 'audio/silent_quarter-second.wav';
+    HIT.src = 'audio/silent_quarter-second.wav';
+    SWOOSHING.src = 'audio/silent_quarter-second.wav';
+    DIE.src = 'audio/silent_quarter-second.wav';
+  }
+}
+
+
+
+
+// Toggle Sound End
+
+
 // LOAD SOUNDS
 const SCORE_S = new Audio();
 SCORE_S.src = 'audio/sfx_point.wav';
