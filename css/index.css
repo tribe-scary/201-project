@@ -127,3 +127,9 @@ canvas {
 .switch:hover {
   cursor: pointer;
 }
+
+#toggle-sound {
+  display: none;
+}
+
+  
