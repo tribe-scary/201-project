@@ -438,7 +438,6 @@ function loop()
     requestAnimationFrame(loop);
   } else
   {
-    Player.readFromLocalStorage();
     let nameInput = document.createElement('input');
     gameAreaElement.appendChild(nameInput);
     nameInput.type = 'text';
@@ -448,8 +447,7 @@ function loop()
     {
       if (event.key === 'Enter')
       {
-        new Player(nameInput.value, score.value);
-        Player.saveToLocalStorage();
+        Player.saveToLocalStorage(new Player(nameInput.value, score.value));
         gameAreaElement.removeChild(nameInput);// safely deletes nameInput
         nameInput.replaceWith(nameInput.cloneNode());// removes event listener
       }
