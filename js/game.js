@@ -405,6 +405,11 @@ function loop()
     requestAnimationFrame(loop);
   } else
   {
+    let nameInput = document.createElement("input");
+    nameInput.type = "text";
+
+    new Player("testPerson", score.value);
+    Player.saveToLocalStorage();
     //TODO create new player and call save to local storage function
   }
 }

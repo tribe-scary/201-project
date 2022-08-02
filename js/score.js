@@ -5,10 +5,10 @@ let mainTableElem = document.getElementById('highscore');
 
 
 // let userName = [];
-// let userScore = []; 
+// let userScore = [];
 
 // function Score(userName, userScore) {
-//   this.userName = userName; 
+//   this.userName = userName;
 //   this.userScore = userScore;
 
 //   bestScore.push(this);
@@ -17,19 +17,19 @@ let mainTableElem = document.getElementById('highscore');
 // Score.prototype.get = function () {
 //   for (let i = 0; i < 10; i++) {
 //     if (userScore >= bestScore);
-//     let bestScore = userScore; 
+//     let bestScore = userScore;
 //     this.bestScore.push();
 //   }
 //     else {
 //       (userScore < bestScore);
-//     let bestScore = !userScore; 
+//     let bestScore = !userScore;
 //     bestScore.push(this)(randomScore);;
 //   }
 // }
+
 Player.readFromLocalStorage();
 
 let data = Player.players;
-
 
 
 Player.render = function () {
@@ -44,7 +44,7 @@ Player.render = function () {
     mainTableElem.appendChild(newUser);
 
     let rankCell = document.createElement('td');
-    rankCell.textContent = i+1; 
+    rankCell.textContent = i+1;
     newUser.appendChild(rankCell);
 
     let nameCell = document.createElement('td');
