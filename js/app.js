@@ -42,6 +42,10 @@ Player.readFromLocalStorage = function ()
 
   Player.players.sort(compareScore);
   Player.players.reverse();
+
+  Player.players.length = 10;
+
+
 };
 
 function compareScore(firstPlayer, secondPlayer)

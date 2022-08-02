@@ -5,13 +5,13 @@ h1 {
   font-weight: 300;
   font-size: 1.5rem;
   color: #fff;
-  text-align: center;
-  
+  text-align: center;  
 }
 
 body {
   background-color: #413e3e;
 }
+
 
 .gameInstructions {
   display: flex;
@@ -21,6 +21,7 @@ body {
   align-items: center;
   align-content: center;
   margin: .5rem .5rem;
+
 }
 
 .trigger {
@@ -95,6 +96,7 @@ body {
   transform: scale(1.0);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
+
 
 canvas {
   margin-bottom: 2rem;
