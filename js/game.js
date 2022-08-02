@@ -319,7 +319,7 @@ const pipes = {
   {
     if (state.current !== state.game) return;
 
-    if (frameCount % 100 === 0)
+    if (frameCount % 180 === 0)
     {
       this.position.push({
         x: cvs.width,
