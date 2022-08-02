@@ -38,11 +38,7 @@ function handleClick(event){
   }
 }
 
-
-
-
 // Toggle Sound End
-
 
 // LOAD SOUNDS
 const SCORE_S = new Audio();
