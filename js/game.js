@@ -4,6 +4,9 @@ const ctx = cvs.getContext('2d');
 
 const gameAreaElement = cvs.parentElement;
 
+let xGap = 200;
+let yGap = 280;
+
 // GAME VARS AND CONSTS
 let frameCount = 0; // renamed from frames because of eslint error
 const DEGREE = Math.PI / 180;
@@ -20,8 +23,8 @@ toggleSound.addEventListener('change', handleClick);
 
 let clickStatus = true;
 
-let xGap = 200;
-let yGap = 280;
+let btn = document.getElementById('change-color');
+
 
 function handleClick(event)
 {
@@ -29,6 +32,8 @@ function handleClick(event)
 
   if (clickStatus === true)
   {
+    btn.innerText = 'Sound On';
+    btn.style.backgroundColor = 'green';
     SCORE_S.src = 'audio/sfx_point.wav';
     FLAP.src = 'audio/sfx_flap.wav';
     HIT.src = 'audio/sfx_hit.wav';
@@ -36,6 +41,8 @@ function handleClick(event)
     DIE.src = 'audio/sfx_die.wav';
   } else
   {
+    btn.innerText = 'Sound Off';
+    btn.style.backgroundColor = '#943232';
     SCORE_S.src = 'audio/silent_quarter-second.wav';
     FLAP.src = 'audio/silent_quarter-second.wav';
     HIT.src = 'audio/silent_quarter-second.wav';
@@ -46,6 +53,13 @@ function handleClick(event)
 
 
 // Toggle Sound End
+
+// Strat of button color change
+
+
+
+
+// End of buttopn color change
 
 
 // LOAD SOUNDS
