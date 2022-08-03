@@ -1,42 +1,118 @@
-body {
-    background-color: #413e3e;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.bio {
-    margin-top: 0%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 2vw;
+.container {
+    height: 50%;
+    width: 85vw;
+    margin: 1rem auto;
+    overflow: hidden;   
 }
 
-div p {
-    border: solid;
-    margin: 2vw;
-    background-color: #6d98b4;
-    padding: 1vw;
-    height: auto;
-    width: 80%;
+.container img {
+    width: 400px;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    border-radius: 2rem;
 }
 
-div img {
-    border: solid;
-    height: 170px;
-    width: 170px;
-    border-radius: 100px;
-}
-
-.contactInfo p {
+.bg,
+.overlay {
     text-align: center;
-    margin-left: 1vw;
+
 }
 
-section a:hover {
-    color: #943232;
+img,
+.overlay {
+    transition: .3s all;
+    border-radius: 3px;
 }
 
-a {
+.bg {
+    float: left;
+    max-width: 31%;
+    position: relative;
+    margin: .5%;
+}
+
+img {
+    width: 100%;
+    margin-bottom: -4px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    opacity: 0;
+}
+
+h2 {
+    margin-bottom: .5rem;
+    padding: 5% 2% 0 2%;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    align-content: flex-end;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding: 0 .5rem 0 .5rem;
+}
+
+.overlay {
+    background-color: rgba(148, 50, 50, 0.8);
+    border-radius: 2rem;
+
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.overlay img:hover {
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+
+@media screen and (max-width: 1148px) {
+    .bg {
+    max-width: 48%;
+    margin: 1%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bg {
+    float: none;
+    max-width: 80%;
+    margin: 1% auto;
+    }
+}
+
+a:link, a:visited,  a:hover, a:active {
     text-decoration: none;
-    color: yellow;
+    color: black;
 }
 
+.socials {
+    background-color: rgba(255, 248, 250, 0.4);
+    border-radius: 5rem;
+    display: flex;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    justify-content: space-between;
+}
