@@ -60,3 +60,23 @@ function compareScore(firstPlayer, secondPlayer)
   }
   return 0;
 }
+
+let devScores = [];
+devScores.push(new Player('Adr', 56)); // 3 character limit on names
+devScores.push(new Player('Jun', 58));
+devScores.push(new Player('Rob', 39));
+devScores.push(new Player('Jos', 42));
+devScores.push(new Player('Ste', 57));
+
+let savedPlayers = JSON.parse(localStorage.getItem('players'));
+for (let i = 0; i < savedPlayers.length; i++)
+{
+  for (let j = 0; j < devScores.length; j++)
+  {
+    if (savedPlayers[i].name === devScores[j].name && savedPlayers[i].score === devScores[j].score)
+    {
+      let index = Player.players.indexOf(devScores[j]);
+      Player.players.splice(index, 1);
+    }
+  }
+}
