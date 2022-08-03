@@ -11,9 +11,7 @@
     height: 50%;
     width: 85vw;
     margin: 1rem auto;
-    overflow: hidden;
-    z-index: -1;
-    
+    overflow: hidden;   
 }
 
 .container img {
@@ -26,6 +24,7 @@
 .bg,
 .overlay {
     text-align: center;
+
 }
 
 img,
