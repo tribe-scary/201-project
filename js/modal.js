@@ -6,7 +6,7 @@ function toggleModal() {
   modal.classList.toggle('show-modal');
 }
 
-function windowOnHover(event) {
+function windowOnClick(event) {
   if (event.target === modal) {
     toggleModal();
   }
@@ -14,4 +14,4 @@ function windowOnHover(event) {
 
 trigger.addEventListener('click', toggleModal);
 closeButton.addEventListener('click', toggleModal);
-window.addEventListener('click', windowOnHover);
+window.addEventListener('click', windowOnClick);
