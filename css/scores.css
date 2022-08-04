@@ -16,8 +16,7 @@ main {
 #backgroundImage {
     background-image: url("https://media1.giphy.com/media/9LZTcawH3mc8V2oUqk/giphy.gif?cid=ecf05e4762va9jyrawk8ryettp9671zlxhdeqh2xci0tspaw&rid=giphy.gif&ct=g");
     background-size: contain;
-    background-repeat:inherit;
-    background-position;
+    background-repeat: inherit;
     height: 100%;
     width: 100%;
     display: flex;
@@ -54,22 +53,23 @@ th, tr, td {
 
 
 }
+
 /* Scrollbar styles */
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: #7fced8;
     border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ba1c9d;
-  }
-  
+}
 
-footer{
+::-webkit-scrollbar-thumb:hover {
+    background: #ba1c9d;
+}
+
+
+footer {
     margin-top: 0%;
 }

@@ -71,6 +71,11 @@ devScores.push(new Player('Jos', 42));
 devScores.push(new Player('Ste', 57));
 
 let savedPlayers = JSON.parse(localStorage.getItem('players'));
+if (!savedPlayers)
+{
+  savedPlayers = [];
+}
+
 for (let i = 0; i < savedPlayers.length; i++)
 {
   for (let j = 0; j < devScores.length; j++)
