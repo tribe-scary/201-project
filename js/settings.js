@@ -1,13 +1,16 @@
-const settings = document.querySelector('.settings-modal');
+const settings = document.querySelector('#settings-modal');
 const settingsTrigger = document.querySelector('#settings-button');
 const closeTab = document.querySelectorAll('.close-button')[1];
 
-function toggleModal() {
+function toggleModal()
+{
   settings.classList.toggle('show-modal');
 }
 
-function windowOnClick(event) {
-  if (event.target === settings) {
+function windowOnClick(event)
+{
+  if (event.target === settings)
+  {
     toggleModal();
   }
 }
@@ -15,3 +18,10 @@ function windowOnClick(event) {
 settingsTrigger.addEventListener('click', toggleModal);
 closeTab.addEventListener('click', toggleModal);
 window.addEventListener('click', windowOnClick);
+
+settingsTrigger.addEventListener('click', function ()
+{
+  settingsTrigger.classList.toggle('clicked-button');
+});
+
+
