@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-"use strict";
+'use strict';
 
-let mainTableElem = document.getElementById("highscore");
+let mainTableElem = document.getElementById('highscore');
 
 // let userName = [];
 // let userScore = [];
@@ -30,50 +30,51 @@ Player.readFromLocalStorage();
 
 let data = Player.players;
 
-Player.render = function () {
-  let row1 = document.createElement("tr");
+Player.render = function ()
+{
+  let row1 = document.createElement('tr');
   mainTableElem.appendChild(row1);
 
-  for (let i = 0; i < data.length; i++) {
-    let newUser = document.createElement("tr");
+  for (let i = 0; i < data.length; i++)
+  {
+    let newUser = document.createElement('tr');
     mainTableElem.appendChild(newUser);
 
-    let rankCell = document.createElement("td");
+    let rankCell = document.createElement('td');
 
     rankCell.textContent = i + 1;
 
     newUser.appendChild(rankCell);
 
-    let nameCell = document.createElement("td");
+    let nameCell = document.createElement('td');
     nameCell.textContent = data[i].name;
     newUser.appendChild(nameCell);
 
-    let scoreCell = document.createElement("td");
+    let scoreCell = document.createElement('td');
     scoreCell.textContent = data[i].score;
     newUser.appendChild(scoreCell);
   }
 };
 
-function makeHeader() {
-  let row1 = document.createElement("tr");
+function makeHeader()
+{
+  let row1 = document.createElement('tr');
   mainTableElem.appendChild(row1);
 
-  let th1Elem = document.createElement("th");
-  th1Elem.textContent = "Rank";
+  let th1Elem = document.createElement('th');
+  th1Elem.textContent = 'Rank';
   row1.appendChild(th1Elem);
 
-  let th2Elem = document.createElement("th");
-  th2Elem.textContent = "Name";
+  let th2Elem = document.createElement('th');
+  th2Elem.textContent = 'Name';
   row1.appendChild(th2Elem);
 
-  let th3Elem = document.createElement("th");
-  th3Elem.textContent = "Score";
+  let th3Elem = document.createElement('th');
+  th3Elem.textContent = 'Score';
   row1.appendChild(th3Elem);
 }
 
 // read scores.json with fetch API
-
-
 
 
 makeHeader();

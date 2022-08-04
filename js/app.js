@@ -29,6 +29,8 @@ Player.readFromLocalStorage = function ()
   let data = JSON.parse(localStorage.getItem('players'));
   if (!data)
   {
+    Player.players.sort(compareScore);
+    Player.players.reverse();
     return;
   }
 
