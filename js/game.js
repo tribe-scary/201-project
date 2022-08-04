@@ -1,6 +1,9 @@
 // SELECT CVS
-const cvs = document.getElementById("bird");
-const ctx = cvs.getContext("2d");
+const cvs = document.getElementById('bird');
+const ctx = cvs.getContext('2d');
+cvs.onMouseDown = function(){
+  return false;
+};
 
 const gameAreaElement = cvs.parentElement;
 
