@@ -8,6 +8,22 @@ Final Project for Code Fellows 201
 * Stephen: Seattle (PST)
 * Jun: Seattle (PST)
 
+## Resources
+
+https://tribe-scary.github.io/201-project/
+
+Base game source Code Explained GitHub: https://github.com/CodeExplainedRepo/Original-Flappy-bird-JavaScript
+
+Canvas background image UnSplash @afgprogrammer: https://images.unsplash.com/photo-1607706189992-eae578626c86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+
+High Score page: https://giphy.com/gifs/perfect-loops-9LZTcawH3mc8V2oUqk
+
+main background
+high score table background: https://unsplash.com/photos/fdOcFw5s2X8
+
+rainbow text: https://welearncode.com/rainbow-text/
+
+
 ## Group Project: Team Agreement
 
 ### The first step in project planning is establishing a Team Agreement. This will be used as the guideline for how your team will collaborate during project week
