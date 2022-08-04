@@ -5,7 +5,7 @@ h1 {
   font-weight: 300;
   font-size: 1.5rem;
   color: #fff;
-  text-align: center;  
+  text-align: center;
 }
 
 body {
@@ -51,7 +51,11 @@ body {
   border: solid .25rem black;
 }
 
-.modal {
+#settings-modal {
+  background: none;
+}
+
+.modal{
   position: fixed;
   left: 0;
   top: 0;
@@ -63,6 +67,24 @@ body {
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
   z-index: 9999;
+}
+
+#settings-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+}
+
+#settings-button {
+  transition: transform 1s;
+}
+
+.clicked-button {
+  transform: rotate(90deg);
 }
 
 .modal-content {
@@ -86,6 +108,11 @@ body {
   background-color: lightgray;
   margin-right: 1rem;
 }
+
+.close-button:nth-child(1) {
+  align-self: flex-end;
+}
+
 
 .close-button:hover {
   background-color: darkgray;
@@ -142,4 +169,4 @@ canvas {
   display: none;
 }
 
-  
+
