@@ -42,6 +42,20 @@
         <label class="switch" for="toggle-sound" id="change-color"> Sound On/Off</label>
             <input id="toggle-sound" type="checkbox" checked>
             <span class="slider round"></span>
+
+        <img src="img/settings-cog.svg" alt="Settings button" id="settings-button" width="35" height="auto">
+        <div class="settings-modal">
+          <div id="sound-settings" class="modal-content">
+            <span class="close-button">&times;</span>
+            <label for="score-sound">Score Sound</label><input 
+            id="score-sound" type="checkbox" checked>
+            <label for="flap-sound">Flapping</label><input id="flap-sound" type="checkbox" checked>
+            <label for="hit-sound">Hits</label><input id="hit-sound" type="checkbox" checked>
+            <label for="swooshing-sound">Swooshing</label><input id="swooshing-sound" type="checkbox"checked>
+            <label for="die-sound">Death</label><input id="die-sound" type="checkbox" checked>
+        </div>
+      </div>
+
     </div>
     <div id="main-game-area">
         <canvas id="bird" width="640" height="760"></canvas>
@@ -52,6 +66,6 @@
 </footer>
 </body>
 <script src="./js/modal.js"></script>
-<script src="./js/game.js"></script>
+<script src="./js/settings.js"></script><script src="./js/game.js"></script>
 <script src="./js/app.js"></script>
 </html>

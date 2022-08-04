@@ -51,7 +51,7 @@ body {
   border: solid .25rem black;
 }
 
-.modal {
+.modal .settings-modal{
   position: fixed;
   left: 0;
   top: 0;
@@ -74,6 +74,12 @@ body {
   padding: 1rem 1.5rem;
   width: 30rem;
   border-radius: 0.5rem;
+}
+
+#sound-settings {
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
 }
 
 .close-button {

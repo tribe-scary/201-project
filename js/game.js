@@ -17,6 +17,8 @@ sprite.src = 'img/sprite.png';
 
 // Toggle Sound Start
 
+let globalSounds = document.querySelectorAll('#sound-settings input');
+
 let toggleSound = document.getElementById('toggle-sound');
 
 toggleSound.addEventListener('change', handleClick);
@@ -29,6 +31,11 @@ let btn = document.getElementById('change-color');
 function handleClick(event)
 {
   clickStatus = !clickStatus;
+
+  for (let i = 0; i < globalSounds.length; i++){
+    globalSounds[i].checked = clickStatus;
+  }
+
 
   if (clickStatus === true)
   {
@@ -54,12 +61,84 @@ function handleClick(event)
 
 // Toggle Sound End
 
-// Strat of button color change
 
 
 
 
-// End of buttopn color change
+
+
+
+// Start of settings checkboxes
+
+let scoreSound = document.getElementById('score-sound');
+
+let flapSound = document.getElementById('flap-sound');
+
+let hitSound = document.getElementById('hit-sound');
+
+let swooshingSound = document.getElementById('swooshing-sound');
+
+let dieSound = document.getElementById('die-sound');
+
+scoreSound.addEventListener('change', handleSettings);
+
+flapSound.addEventListener('change', handleSettings);
+
+hitSound.addEventListener('change', handleSettings);
+
+swooshingSound.addEventListener('change', handleSettings);
+
+dieSound.addEventListener('change', handleSettings);
+
+function handleSettings(event){
+  switch(event.target.id){
+  case 'score-sound':
+    if (event.target.checked){ 
+      SCORE_S.src = 'audio/sfx_point.wav';  
+    } else {
+      SCORE_S.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+
+  case 'flap-sound':
+    if (event.target.checked){
+      FLAP.src = 'audio/sfx_flap.wav';
+    } else {
+      FLAP.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+    
+  case 'hit-sound':
+    if (event.target.checked){
+      HIT.src = 'audio/sfx_hit.wav';
+    } else {
+      HIT.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+      
+  case 'swooshing-sound':
+    if (event.target.checked){
+      SWOOSHING.src = 'audio/sfx_swooshing.wav';
+    } else {
+      SWOOSHING.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+        
+  case 'die-sound':
+    if (event.target.checked){
+      DIE.src = 'audio/sfx_die.wav';
+    } else {
+      DIE.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+  }
+}
+      
+
+
+
+
+// End  of settings checkboxes
 
 
 // LOAD SOUNDS
