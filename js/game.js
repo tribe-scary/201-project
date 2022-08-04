@@ -4,6 +4,9 @@ const ctx = cvs.getContext('2d');
 
 const gameAreaElement = cvs.parentElement;
 
+let xGap = 200;
+let yGap = 280;
+
 // GAME VARS AND CONSTS
 let frameCount = 0; // renamed from frames because of eslint error
 const DEGREE = Math.PI / 180;
@@ -14,22 +17,39 @@ sprite.src = 'img/sprite.png';
 
 // Toggle Sound Start
 
-let toggleSound = document.getElementById("toggle-sound");
+let globalSounds = document.querySelectorAll('#sound-settings input');
 
-toggleSound.addEventListener("change", handleClick);
+let toggleSound = document.getElementById('toggle-sound');
+
+toggleSound.addEventListener('change', handleClick);
 
 let clickStatus = true;
 
-function handleClick(event){
+let btn = document.getElementById('change-color');
+
+
+function handleClick(event)
+{
   clickStatus = !clickStatus;
 
-  if (clickStatus === true){
+  for (let i = 0; i < globalSounds.length; i++){
+    globalSounds[i].checked = clickStatus;
+  }
+
+
+  if (clickStatus === true)
+  {
+    btn.innerText = 'Sound On';
+    btn.style.backgroundColor = 'green';
     SCORE_S.src = 'audio/sfx_point.wav';
     FLAP.src = 'audio/sfx_flap.wav';
     HIT.src = 'audio/sfx_hit.wav';
     SWOOSHING.src = 'audio/sfx_swooshing.wav';
     DIE.src = 'audio/sfx_die.wav';
-  } else {
+  } else
+  {
+    btn.innerText = 'Sound Off';
+    btn.style.backgroundColor = '#943232';
     SCORE_S.src = 'audio/silent_quarter-second.wav';
     FLAP.src = 'audio/silent_quarter-second.wav';
     HIT.src = 'audio/silent_quarter-second.wav';
@@ -38,8 +58,94 @@ function handleClick(event){
   }
 }
 
+<<<<<<< HEAD
 // Toggle Sound End
 
+=======
+
+// Toggle Sound End
+
+
+
+
+
+
+
+
+// Start of settings checkboxes
+
+let scoreSound = document.getElementById('score-sound');
+
+let flapSound = document.getElementById('flap-sound');
+
+let hitSound = document.getElementById('hit-sound');
+
+let swooshingSound = document.getElementById('swooshing-sound');
+
+let dieSound = document.getElementById('die-sound');
+
+scoreSound.addEventListener('change', handleSettings);
+
+flapSound.addEventListener('change', handleSettings);
+
+hitSound.addEventListener('change', handleSettings);
+
+swooshingSound.addEventListener('change', handleSettings);
+
+dieSound.addEventListener('change', handleSettings);
+
+function handleSettings(event){
+  switch(event.target.id){
+  case 'score-sound':
+    if (event.target.checked){ 
+      SCORE_S.src = 'audio/sfx_point.wav';  
+    } else {
+      SCORE_S.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+
+  case 'flap-sound':
+    if (event.target.checked){
+      FLAP.src = 'audio/sfx_flap.wav';
+    } else {
+      FLAP.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+    
+  case 'hit-sound':
+    if (event.target.checked){
+      HIT.src = 'audio/sfx_hit.wav';
+    } else {
+      HIT.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+      
+  case 'swooshing-sound':
+    if (event.target.checked){
+      SWOOSHING.src = 'audio/sfx_swooshing.wav';
+    } else {
+      SWOOSHING.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+        
+  case 'die-sound':
+    if (event.target.checked){
+      DIE.src = 'audio/sfx_die.wav';
+    } else {
+      DIE.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+  }
+}
+      
+
+
+
+
+// End  of settings checkboxes
+
+
+>>>>>>> 3db0c19fa44c0a83ccfd9bd04e4e109d2d1f6b92
 // LOAD SOUNDS
 const SCORE_S = new Audio();
 SCORE_S.src = 'audio/sfx_point.wav';
@@ -73,8 +179,13 @@ const startBtn = {
 };
 
 // CONTROL THE GAME
-cvs.addEventListener('click', function (evt)
+function jumpHandler(event)
 {
+
+  if (event.key !== ' ' && event.keyCode !== undefined)
+  {
+    return;
+  }
   let rect;
   let clickX;
   let clickY;
@@ -91,21 +202,34 @@ cvs.addEventListener('click', function (evt)
     break;
   case state.over:
     rect = cvs.getBoundingClientRect();
-    clickX = evt.clientX - rect.left;
-    clickY = evt.clientY - rect.top;
+    clickX = event.clientX - rect.left;
+    clickY = event.clientY - rect.top;
 
     // CHECK IF WE CLICK ON THE START BUTTON
-    if (clickX >= startBtn.x && clickX <= startBtn.x + startBtn.w && clickY >= startBtn.y && clickY <= startBtn.y + startBtn.h) //todo remove name element if you click this
+    if (clickX >= startBtn.x && clickX <= startBtn.x + startBtn.w && clickY >= startBtn.y && clickY <= startBtn.y + startBtn.h)
     {
-      pipes.reset();
-      bird.speedReset();
-      score.reset();
-      state.current = state.getReady;
-      loop();
+      let nameInput = document.getElementById('name-input');
+      if (nameInput)
+      {
+        gameAreaElement.removeChild(nameInput);
+      }
+      reset();
     }
     break;
   }
-});
+}
+
+function reset()
+{
+  pipes.reset();
+  bird.speedReset();
+  score.reset();
+  state.current = state.getReady;
+  loop();
+}
+
+cvs.addEventListener('click', jumpHandler);
+document.body.onkeyup = jumpHandler;
 
 
 // BACKGROUND
@@ -290,7 +414,7 @@ const pipes = {
 
   w: 92,
   h: 854,
-  gap: 280,
+  gap: yGap,
   maxYPos: -460,
   dx: 2,
 
@@ -315,7 +439,7 @@ const pipes = {
   {
     if (state.current !== state.game) return;
 
-    if (frameCount % 100 === 0)
+    if (frameCount % xGap === 0)
     {
       this.position.push({
         x: cvs.width,
@@ -352,7 +476,6 @@ const pipes = {
         score.value += 1;
         SCORE_S.play();
         score.best = Math.max(score.value, score.best);
-        localStorage.setItem('best', score.best); // Todo save highscore to player object with name instead of this
       }
     }
   },
@@ -438,16 +561,19 @@ function loop()
     gameAreaElement.appendChild(nameInput);
     nameInput.type = 'text';
     nameInput.placeholder = 'Name';
+    nameInput.id = 'name-input';
+    nameInput.maxLength = 3;
 
     nameInput.addEventListener('keypress', function handleSubmit(event)
     {
       if (event.key === 'Enter')
       {
-        Player.saveToLocalStorage(new Player(nameInput.value, score.value));
+        Player.saveToLocalStorage(new Player(nameInput.value.toUpperCase(), score.value));
         gameAreaElement.removeChild(nameInput);// safely deletes nameInput
         nameInput.replaceWith(nameInput.cloneNode());// removes event listener
+        reset();
       }
-    }); //todo remove name when start button is hit or block the start button
+    });
   }
 }
 

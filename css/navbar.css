@@ -11,10 +11,8 @@ html {
 }
 
 nav {
-  position: sticky;
   left: 0;
   top: 0;
-  width: 100%;
   width: 100%;
   background-color: #943232;
   padding-left: 2rem;
@@ -27,7 +25,7 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .nav-item a {
@@ -57,7 +55,7 @@ nav {
 
 
 footer {
-  position: fixed;
+  position: sticky;
   left: 0;
   bottom: 0;
   width: 100%;

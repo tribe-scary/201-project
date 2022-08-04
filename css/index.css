@@ -6,8 +6,12 @@ h1 {
   font-size: 1.5rem;
   color: #fff;
   text-align: center;
-  
 }
+
+body {
+  background-color: #413e3e;
+}
+
 
 .gameInstructions {
   display: flex;
@@ -16,7 +20,8 @@ h1 {
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin: 1rem 1rem;
+  margin: .5rem .5rem;
+
 }
 
 .trigger {
@@ -29,9 +34,9 @@ h1 {
   font-family: 'teko';
   color: #fff;
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 2rem;
   width: 12rem;
-  height: 4rem;
+  height: 3rem;
   background-color: #943232;
   border-radius: 25rem;
   border: solid .25rem black;
@@ -41,12 +46,16 @@ h1 {
   cursor: pointer;
   color: #943232;
   background-color: #fff;
-  
+
   border-radius: 25rem;
   border: solid .25rem black;
 }
 
-.modal {
+#settings-modal {
+  background: none;
+}
+
+.modal{
   position: fixed;
   left: 0;
   top: 0;
@@ -57,6 +66,25 @@ h1 {
   visibility: hidden;
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  z-index: 9999;
+}
+
+#settings-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+}
+
+#settings-button {
+  transition: transform 1s;
+}
+
+.clicked-button {
+  transform: rotate(90deg);
 }
 
 .modal-content {
@@ -81,6 +109,11 @@ h1 {
   margin-right: 1rem;
 }
 
+.close-button:nth-child(1) {
+  align-self: flex-end;
+}
+
+
 .close-button:hover {
   background-color: darkgray;
 }
@@ -92,3 +125,51 @@ h1 {
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
+<<<<<<< HEAD
+=======
+
+canvas {
+  margin-bottom: 2rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 2rem;
+  border: solid 5px white;
+}
+
+#toggle-sound {
+  position: absolute;
+  top: 80px;
+  left: 500px;
+  border-radius: 25rem;
+  border: solid .25rem black;
+}
+
+.switch {
+  margin-left: 2rem;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  font-family: 'teko';
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  font-size: 2rem;
+  width: 12rem;
+  height: 3rem;
+  background-color: #943232;
+  border-radius: 25rem;
+  border: solid .25rem black;
+}
+
+.switch:hover {
+  cursor: pointer;
+}
+
+#toggle-sound {
+  display: none;
+}
+
+
+>>>>>>> 3db0c19fa44c0a83ccfd9bd04e4e109d2d1f6b92
