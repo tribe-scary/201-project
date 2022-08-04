@@ -1,3 +1,5 @@
+'use strict';
+
 const settings = document.querySelector('#settings-modal');
 const settingsTrigger = document.querySelector('#settings-button');
 const closeTab = document.querySelectorAll('.close-button')[1];
