@@ -66,6 +66,20 @@ footer {
   display: flex;
   justify-content: center;
 }
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7fced8;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ba1c9d;
+}
 
 footer a {
   font-family: 'teko';
