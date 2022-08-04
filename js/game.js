@@ -17,7 +17,11 @@ sprite.src = "img/sprite.png";
 
 // Toggle Sound Start
 
+<<<<<<< HEAD
 let globalSounds = document.querySelectorAll("#sound-settings input");
+=======
+let globalSounds = document.querySelectorAll('#settings-content input');
+>>>>>>> 2902ec7ce56a71f909fa19e651eedcf0c2eaccfb
 
 let toggleSound = document.getElementById("toggle-sound");
 
@@ -30,10 +34,18 @@ let btn = document.getElementById("change-color");
 function handleClick(event) {
   clickStatus = !clickStatus;
 
+<<<<<<< HEAD
   for (let i = 0; i < globalSounds.length; i++) {
+=======
+  for (let i = 0; i < globalSounds.length; i++)
+  {
+>>>>>>> 2902ec7ce56a71f909fa19e651eedcf0c2eaccfb
     globalSounds[i].checked = clickStatus;
+    let newEvent = {target: globalSounds[i]};
+    handleSettings(newEvent);
   }
 
+<<<<<<< HEAD
   if (clickStatus === true) {
     btn.innerText = "Sound On";
     btn.style.backgroundColor = "green";
@@ -50,11 +62,26 @@ function handleClick(event) {
     HIT.src = "audio/silent_quarter-second.wav";
     SWOOSHING.src = "audio/silent_quarter-second.wav";
     DIE.src = "audio/silent_quarter-second.wav";
+=======
+
+  if (clickStatus === true)
+  {
+    btn.innerText = 'Sound On';
+    btn.style.backgroundColor = 'green';
+  } else
+  {
+    btn.innerText = 'Sound Off';
+    btn.style.backgroundColor = '#943232';
+>>>>>>> 2902ec7ce56a71f909fa19e651eedcf0c2eaccfb
   }
 }
 
 // Toggle Sound End
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2902ec7ce56a71f909fa19e651eedcf0c2eaccfb
 // Start of settings checkboxes
 
 let scoreSound = document.getElementById("score-sound");
@@ -77,6 +104,7 @@ swooshingSound.addEventListener("change", handleSettings);
 
 dieSound.addEventListener("change", handleSettings);
 
+<<<<<<< HEAD
 function handleSettings(event) {
   switch (event.target.id) {
   case "score-sound":
@@ -116,10 +144,68 @@ function handleSettings(event) {
       DIE.src = "audio/sfx_die.wav";
     } else {
       DIE.src = "audio/silent_quarter-second.wav";
+=======
+function handleSettings(event)
+{
+  console.log(event);
+  switch (event.target.id)
+  {
+  case 'score-sound':
+    if (event.target.checked)
+    {
+      SCORE_S.src = 'audio/sfx_point.wav';
+    } else
+    {
+      SCORE_S.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+
+  case 'flap-sound':
+    if (event.target.checked)
+    {
+      FLAP.src = 'audio/sfx_flap.wav';
+    } else
+    {
+      FLAP.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+
+  case 'hit-sound':
+    if (event.target.checked)
+    {
+      HIT.src = 'audio/sfx_hit.wav';
+    } else
+    {
+      HIT.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+
+  case 'swooshing-sound':
+    if (event.target.checked)
+    {
+      SWOOSHING.src = 'audio/sfx_swooshing.wav';
+    } else
+    {
+      SWOOSHING.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+
+  case 'die-sound':
+    if (event.target.checked)
+    {
+      DIE.src = 'audio/sfx_die.wav';
+    } else
+    {
+      DIE.src = 'audio/silent_quarter-second.wav';
+>>>>>>> 2902ec7ce56a71f909fa19e651eedcf0c2eaccfb
     }
     break;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2902ec7ce56a71f909fa19e651eedcf0c2eaccfb
 
 // End  of settings checkboxes
 
