@@ -4,6 +4,9 @@ const ctx = cvs.getContext('2d');
 
 const gameAreaElement = cvs.parentElement;
 
+let xGap = 200;
+let yGap = 280;
+
 // GAME VARS AND CONSTS
 let frameCount = 0; // renamed from frames because of eslint error
 const DEGREE = Math.PI / 180;
@@ -14,21 +17,30 @@ sprite.src = 'img/sprite.png';
 
 // Toggle Sound Start
 
+let globalSounds = document.querySelectorAll('#sound-settings input');
+
 let toggleSound = document.getElementById('toggle-sound');
 
 toggleSound.addEventListener('change', handleClick);
 
 let clickStatus = true;
 
-let xGap = 200;
-let yGap = 280;
+let btn = document.getElementById('change-color');
+
 
 function handleClick(event)
 {
   clickStatus = !clickStatus;
 
+  for (let i = 0; i < globalSounds.length; i++){
+    globalSounds[i].checked = clickStatus;
+  }
+
+
   if (clickStatus === true)
   {
+    btn.innerText = 'Sound On';
+    btn.style.backgroundColor = 'green';
     SCORE_S.src = 'audio/sfx_point.wav';
     FLAP.src = 'audio/sfx_flap.wav';
     HIT.src = 'audio/sfx_hit.wav';
@@ -36,6 +48,8 @@ function handleClick(event)
     DIE.src = 'audio/sfx_die.wav';
   } else
   {
+    btn.innerText = 'Sound Off';
+    btn.style.backgroundColor = '#943232';
     SCORE_S.src = 'audio/silent_quarter-second.wav';
     FLAP.src = 'audio/silent_quarter-second.wav';
     HIT.src = 'audio/silent_quarter-second.wav';
@@ -46,6 +60,85 @@ function handleClick(event)
 
 
 // Toggle Sound End
+
+
+
+
+
+
+
+
+// Start of settings checkboxes
+
+let scoreSound = document.getElementById('score-sound');
+
+let flapSound = document.getElementById('flap-sound');
+
+let hitSound = document.getElementById('hit-sound');
+
+let swooshingSound = document.getElementById('swooshing-sound');
+
+let dieSound = document.getElementById('die-sound');
+
+scoreSound.addEventListener('change', handleSettings);
+
+flapSound.addEventListener('change', handleSettings);
+
+hitSound.addEventListener('change', handleSettings);
+
+swooshingSound.addEventListener('change', handleSettings);
+
+dieSound.addEventListener('change', handleSettings);
+
+function handleSettings(event){
+  switch(event.target.id){
+  case 'score-sound':
+    if (event.target.checked){ 
+      SCORE_S.src = 'audio/sfx_point.wav';  
+    } else {
+      SCORE_S.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+
+  case 'flap-sound':
+    if (event.target.checked){
+      FLAP.src = 'audio/sfx_flap.wav';
+    } else {
+      FLAP.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+    
+  case 'hit-sound':
+    if (event.target.checked){
+      HIT.src = 'audio/sfx_hit.wav';
+    } else {
+      HIT.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+      
+  case 'swooshing-sound':
+    if (event.target.checked){
+      SWOOSHING.src = 'audio/sfx_swooshing.wav';
+    } else {
+      SWOOSHING.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+        
+  case 'die-sound':
+    if (event.target.checked){
+      DIE.src = 'audio/sfx_die.wav';
+    } else {
+      DIE.src = 'audio/silent_quarter-second.wav';
+    }
+    break;
+  }
+}
+      
+
+
+
+
+// End  of settings checkboxes
 
 
 // LOAD SOUNDS
